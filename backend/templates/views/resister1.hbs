@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GO WITH ALGO</title>
+    <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+    
+    <!--start of class banner -->
+    <div class="banner">
+       <!--start of class navbar -->
+        <div class="nevbar">
+            <img src="image/go.png" class="logo" alt="logo">
+            <ul>
+               <li><a href="/index">Home</a></li>
+                <li><a href="" onclick="show()">Algorithms</a></li>
+                <li><a href="" onclick="show()">Data_structure</a></li>
+                <li><a href="aboutus.html">About us</a></li>
+            </ul>
+            </ul>
+        </div>
+       <!--end of class banner -->
+
+      <!--start of class content -->
+        <div class="content">
+          <div class="a">
+            <span class="animation"></span>
+            <span class="animation"></span>
+            <span class="animation"></span>
+            <span class="animation"></span>
+            <h1>Go with Algo</h1>
+            <p>Join to learn Ds and Algo with us, to join resister now </p>
+            <div ><button class="custom-btn btn-6" onclick="openForm()"><span>resister</span></button>    
+          </div>  
+        </div>   
+    </div>
+    <!--end of class content -->
+    
+  <!--start of class login-box -->
+<div class="login-box" id="signform">
+        <h2>Signup</h2>
+  <form id="my_form" action="resister1" method="POST">
+          <div class="user-box">
+            <input type="text" name="username" required="">
+            <label>Username</label>
+          </div>
+          <div class="user-box">
+            <input type="email" name="emailid" required="">
+            <label>Email</label>
+          </div>
+          <div class="user-box">
+            <input type="tel" name="mobno" required="">
+            <label>Mobile No.</label>
+          </div>
+          <div class="user-box">
+            <input type="password" name="password" required="">
+            <label>Password</label>
+          </div>
+          <a href="javascript:{}" onclick="document.getElementById('my_form').submit();">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Submit
+          </a>
+          <a href="#" onclick="closeForm()">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Cancle
+          </a>
+  </form>
+</div>
+    <!--start of class login-box -->
+      </div>
+      <!-- end of class banner-->
+<script>
+    function openForm() {
+      document.getElementById("signform").style.display = "block";
+    }
+    
+    function closeForm() {
+      document.getElementById("signform").style.display = "none";
+    }
+    
+     function show() {
+          alert("Please Signin or Resister first!!!!");
+        }
+        
+
+    </script>
+    
+    
+</body>
+</html>

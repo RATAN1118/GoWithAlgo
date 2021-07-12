@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html{
+  font-size: 55%;
+}
+@media(max-width:991px){
+  html{
+    font-size:45%;
+  }
+}
+@media(max-width:600px){
+  html{
+    font-size:40%;
+  }
+}
+@media(max-width:350px){
+  html{
+    font-size:32%;
+  }
+
+}
+
+/*  home body  */
+body{
+    background-color:black;
+}
+     .poster{
+        display: block;
+    width: 100%;
+    height: 100vh;
+    background-image:linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url(qimage/workspace-1280538_1920.jpg);
+    background-size: cover;
+    background-position: center;
+     }
+
+/*  Social menu nev bar  */
+     .social-menu li {
+    display: inline-block;
+    position: relative;
+    margin: 0 0 0 1.5rem;
+    top: 3rem;
+ }
+ .social-menu .menu-item .screen-reader-text{
+    list-style: none;
+    display: inline-block;
+    margin: 0 .2rem;
+    position: relative;
+}
+.social-menu .menu-item .screen-reader-text{
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+
+}
+.social-menu .menu-item .screen-reader-text::after{
+    content: ' ';
+    height: .3rem;
+    width: 0;
+    background: #009688;
+    position: absolute;
+    left: 0;
+    bottom: -1.0rem;
+    transition: 0.5s;
+}
+.social-menu .menu-item .screen-reader-text:hover:after{
+    width: 100%;
+}
+
+
+/* division of Introduction   */
+.intro{
+    display:block;
+    top: 12rem;
+    padding: 2rem;
+    color: #fff;
+    position: relative;
+    justify-content: center;
+}
+.intro h1{
+    font-size: 4rem;
+}
+.intro p{
+    text-align: justify;
+    font-size: 2rem;
+    max-width: 100ch;
+}
+
+
+/*  Division of Algoritham */
+.algo{
+    display: none;
+    top: 15rem;
+    padding: 3rem;
+    color: #fff;
+    position: absolute;
+    justify-content: center;
+}
+.algo h1{
+    font-size: 4rem;
+}
+.algo p{
+    text-align: justify;
+    font-size: 2rem;
+    max-width: 100ch;
+}
+
+
+/*  Division of dataStructure  */
+.datastrct{
+    display: none;
+    top: 15.5rem;
+    padding: 3rem;
+    color: #fff;
+    position: absolute;
+    justify-content: center;
+}
+.datastrct h1{
+    font-size: 4rem;
+}
+.datastrct p{
+    text-align: justify;
+    font-size: 2rem;
+    max-width: 100ch;
+}
+
+
+/*  Butoon design for all division  */
+button {
+  margin: 2.0rem;
+}
+ .custom-btn {
+  width: 13.0rem;
+  height: 4.0rem;
+  color: #fff;
+  border-radius: .5rem;
+  padding: 1.0rem 2.5rem;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+   box-shadow:inset .2rem .2rem .2rem 0rem rgba(255,255,255,.5),
+   .7rem .7rem .20rem 0rem rgba(0,0,0,.1),
+   .4rem .4rem .5rem 0rem rgba(0,0,0,.1);
+  outline: none;
+}
+.btn-8 {
+  background-color: #f0ecfc;
+background-image: linear-gradient(315deg, #ecf2fc 0%, #03e9f4 74%);
+  line-height: 4.2rem;
+  padding: 0;
+  border: none;
+}
+.btn-8 span {
+    font-size: 1.8rem;
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: black;
+}
+.btn-8:before,
+.btn-8:after {
+  position: absolute;
+  content: "";
+  right: 0;
+  bottom: 0;
+  background: #03e9f4;
+  /*box-shadow:  4rem 4rem 6rem 0 rgba(255,255,255,.5),
+              -4rem -4rem 6rem 0 rgba(116, 125, 136, .2), 
+    inset -4rem -4rem 6rem 0 rgba(255,255,255,.5),
+    inset 4rem 4rem 6rem 0 rgba(116, 125, 136, .3);*/
+  transition: all 0.3s ease;
+}
+.btn-8:before{
+   height: 0%;
+   width: .2rem;
+}
+.btn-8:after {
+  width: 0%;
+  height: .2rem;
+}
+.btn-8:hover:before {
+  height: 100%;
+}
+.btn-8:hover:after {
+  width: 100%;
+}
+.btn-8:hover{
+  background: transparent;
+}
+.btn-8 span:hover{
+  color: #03e9f4;
+}
+.btn-8 span:before,
+.btn-8 span:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  background: #03e9f4;
+ box-shadow:  0 0 .5rem #03e9f4,
+                0 0 2.5rem #03e9f4,
+                0 0 5.0rem #03e9f4,
+                0 0 10.0rem #03e9f4;  ;
+  transition: all 0.3s ease;
+}
+.btn-8 span:before {
+  width: .2rem;
+  height: 0%;
+}
+.btn-8 span:after {
+  height: .2rem;
+  width: 0%;
+}
+.btn-8 span:hover:before {
+  height: 100%;
+}
+.btn-8 span:hover:after {
+  width: 100%;
+}
+
+/*  division of Content main header  */
+.content {
+    width: 100%;
+    position: absolute;
+    top: 4rem;
+    text-align: center;
+}
+.content .a h1{
+    font-size: 3rem;
+}
+.content .a p{
+    font-size: 1rem;
+    text-shadow: 0 0 .5rem #03e8f4b0,
+  0 0 2.5rem #03e8f4b0,
+  0 0 5rem #03e8f4b0,
+  0 0 10rem #03e8f4b0;
+}
+
+/*  Animation for content division  */
+.content  .a {
+    position: relative;
+    display: inline-block;
+    padding: 1rem 2rem;
+    color:#ffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 4rem;
+    margin-left: 1rem;
+    margin-right: 1rem ;
+    letter-spacing: .4rem
+  }
+  
+  .content .a:hover {
+   
+    border-radius: .5rem;
+   
+  }
+  .content .a h1{
+    color: #03e9f4;
+
+  }
+  .content .a h1:hover{
+    color: #fff;
+  text-shadow: 0 0 .5rem #03e8f4b0,
+  0 0 2.5rem #03e8f4b0,
+  0 0 5rem #03e8f4b0,
+  0 0 10rem #03e8f4b0;}
+  
+  .content .a .animation {
+    position: absolute;
+    display: block;
+  }
+  
+  .content .a .animation:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: .2rem;
+    background: linear-gradient(90deg, transparent, #03e9f4);
+    animation: btn-anim1 1s linear infinite;
+  }
+  
+  @keyframes btn-anim1 {
+    0% {
+      left: -100%;
+    }
+    50%,100% {
+      left: 100%;
+    }
+  }
+  
+  .content .a .animation:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: .2rem;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #03e9f4);
+    animation: btn-anim2 1s linear infinite;
+    animation-delay: .25s
+  }
+  
+  @keyframes btn-anim2 {
+    0% {
+      top: -100%;
+    }
+    50%,100% {
+      top: 100%;
+    }
+  }
+  
+  .content .a .animation:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: .2rem;
+    background: linear-gradient(270deg, transparent, #03e9f4);
+    animation: btn-anim3 1s linear infinite;
+    animation-delay: .5s
+  }
+  
+  @keyframes btn-anim3 {
+    0% {
+      right: -100%;
+    }
+    50%,100% {
+      right: 100%;
+    }
+  }
+  
+  .content .a .animation:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: .2rem;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #03e9f4);
+    animation: btn-anim4 1s linear infinite;
+    animation-delay: .75s
+  }
+  
+  @keyframes btn-anim4 {
+    0% {
+      bottom: -100%;
+    }
+    50%,100% {
+      bottom: 100%;
+    }
+  }
+  .content img{
+      padding-left: 11rem;
+      position: absolute;
+      top: 4rem;
+      width: 12rem;
+  }
+  
+     
+    </style>
+</head>
+<body>
+  <!--start of class poster -->
+  <div class="poster">
+   
+</nav>
+<!--start of class social-menu -->
+
+<div class="social-menu">
+  <ul  >
+    <li class=" menu-item"><a href=""><span class="screen-reader-text">twitter</span></a></li>
+     <li class=" menu-item"><a href=""><span class="screen-reader-text">linkedin</span></a></li>
+    <li class=" menu-item"><a href=""><span class="screen-reader-text">youtube</span></a></li>
+  </ul>
+</div>
+    <!--end of class social-menu -->
+    </nav>
+   
+
+    <!--start of class content -->
+    <div class="content">
+        <img src="qimage/go.png" alt="">
+        <div class="a">
+          <span class="animation"></span>
+          <span class="animation"></span>
+          <span class="animation"></span>
+          <span class="animation"></span>
+          <h1>Go with Algo</h1>
+         
+          <p>welcome {{user}} Thanks for joining </p>
+       </div>
+    </div>
+    <!--end of class content -->
+
+  <!--start of class intro -->
+   <div class="intro" id="intro1">
+       <h1>INTRODUCTION</h1>
+       <button class="custom-btn btn-8" onclick="openalgo()"><span>Algorithms</span></button>
+       <button class="custom-btn btn-8" onclick="opends()"><span>Data_stuctures</span></button>
+       <p>
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Despite being one of the most-demanding skills, the students tend to skip learning Data Structures 
+        and Algorithms as they consider it just a mere subject of Computer Science discipline. However, what
+         they don't know is the utmost usage of Data Structures in developing efficient applications and real life.
+          Undoubtedly, when it comes to the placement scenario, it is witnessed that Data Structure and Algorithm is
+           one of the prominent parts of the recruitment process in the on-campus and off-campus placement process. Top tier tech
+            brands such as Google, Facebook, Microsoft, Youtube, etc. focus more on designing things in the most-optimal manner that
+             improves user experience and enhances tracking and managing. For example, an optimal solution for a problem with time
+              complexity of O(nLogn) instead of O(n^2) can help an organization with n users save thousands of dollars and time and
+               resources. Hence, these companies ask most of the questions related to Data Structures and Algorithms in interviews to 
+               assess a candidate's approach for solving any real-world problem. <br>
+               &emsp;&emsp;&emsp;&emsp;    So, the objective of this project is to provide a platform for users to study the basics and concepts of Data
+           Structure and Algorithms. This is a web-based project where we provide simple explanation and step by
+          step algorithms on every topic and simple example of code in C++ language. There is also a small quiz 
+          taken at the end of every topic to check whether the concepts are clear or not. This will help users not
+           just to learn but practice the algorithms and check themselves all at one place. They won’t need to scroll 
+           various websites for explanation, example with code and MCQ questions on Data Structures and Algorithms. 
+    </p>
+   </div>
+    <!--end of class intro -->
+
+     <!--start of class algo -->
+   <div class="algo" id="algo1">
+    <h1>ALGORITHMS</h1>
+    <button class="custom-btn btn-8" onclick="window.location='aboutus.html';" ><span>Start</span></button>
+    <button class="custom-btn btn-8" onclick="closealgo()"><span>cancle</span></button>
+    <p>
+     &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;An algorithm is a well-defined 
+     procedure that allows a computer to solve a problem. An Algorithm is a sequence of steps that describe
+      how a problem can be solved. Every computer program that ends with a result is basically based on an Algorithm. 
+      Algorithms, however, are not just confined for use in computer programs; these can also be used to solve
+       mathematical problems and on many matters of day-to-day life. Based on how they function, we can divide 
+       Algorithms into multiple types. Learn about divide and conquer, greedy and dynamic programming algorithms
+        and many more to master in Computer Algorithms.
+     </p>
+    </div>
+    <!--end of class algo -->
+
+<!--start of class datastrct -->
+<div class="datastrct" id="ds1">
+    <h1>DATA_STRUCTURES</h1>
+    <button class="custom-btn btn-8" onclick="opensForm()"><span>Start</span></button>
+    <button class="custom-btn btn-8" onclick="closeds()"><span>cancle</span></button>
+    <p>
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Data Structure can be defined 
+    as the group of data elements which provides an efficient way of storing 
+    and organising data in the computer so that it can be used efficiently. Data Structures are widely used 
+    in almost every aspect of Computer Science i.e. Operating System, Compiler Design, Artificial intelligence,
+     Graphics and many more. Data Structures are the main part of many computer science algorithms as they enable
+      the programmers to handle the data in an efficient way. Learn about arrays, linked list, stacks, queues and
+       graphs and many more to master Data Structure.
+ </p>
+</div>
+<!--end of class datastrct -->
+</div>
+<!--end of class poster -->
+<script>
+    function openalgo(){
+        document.getElementById("intro1").style.display = "none";
+        document.getElementById("algo1").style.display = "block";
+    }
+    function opends(){
+        document.getElementById("intro1").style.display = "none";
+        document.getElementById("ds1").style.display = "block";
+    }
+    function closealgo(){
+        document.getElementById("intro1").style.display = "block";
+        document.getElementById("algo1").style.display = "none";
+    }
+    function closeds(){
+        document.getElementById("intro1").style.display = "block";
+        document.getElementById("ds1").style.display = "none";
+    }
+</script>
+</body>
+</html>

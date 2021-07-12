@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GO WITH ALGO</title>
+    <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+    
+    
+    <div class="banner">
+        <div class="nevbar">
+            <img src="image/go.png" class="logo" alt="logo">
+            <ul>
+               <li><a href="/index">Home</a></li>
+                <li><a href="" onclick="show()">Algorithms</a></li>
+                <li><a href="" onclick="show()">Data_structure</a></li>
+                <li><a href="aboutus.html">About us</a></li>
+            </ul>
+            </ul>
+        </div>
+        <div class="content">
+          <div class="a">
+            <span class="animation"></span>
+            <span class="animation"></span>
+            <span class="animation"></span>
+            <span class="animation"></span>
+            <h1>Go with Algo</h1>
+            <p>Join to learn Ds and Algo with us, to join resister now </p>
+            <div ><button class="custom-btn btn-6" onclick="openForm()"><span>sign in</span></button>
+                
+          </div>
+            
+        </div>
+        
+    </div>
+
+<div class="login-box" id="logform">
+    <h2>Login</h2>
+    <form id="my_form" action="/login" method="POST">
+      <div class="user-box">
+        <input type="email" name="newemail"  required="">
+        <label>Email</label>
+      </div>
+      <div class="user-box">
+        <input type="password" name="newpassword"  required="">
+        <label>Password</label>
+      </div>
+      <div class="logl" id="invalid">
+          <label for="logl" id="logl">Invalid details</label>
+      </div>
+     <a href="javascript:{}" onclick="document.getElementById('my_form').submit();">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+         
+        Login
+      </a>
+
+      <a href="#" onclick="closeForm()" >
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        Cancle
+      </a>
+    </form>
+  </div>
+<script>
+    function openForm() {
+      document.getElementById("logform").style.display = "block";
+    }
+    
+    function closeForm() {
+      document.getElementById("logform").style.display = "none";
+    }
+    
+     function show() {
+          alert("Please Signin or Resister first!!!!");
+        }
+        
+
+    </script>
+    
+    
+</body>
+</html>

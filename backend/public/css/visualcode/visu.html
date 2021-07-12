@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <meta charset="utf-8">
+ 
+              
+<style>
+
+.line {
+  stroke:rgba(6, 253, 220, 0.795);
+  stroke-width: 15px;
+  stroke-linecap:round;
+  
+}
+
+.line--pivot {
+  stroke: #f00;
+  stroke-width: 15px;
+}
+
+.line--inactive {
+  stroke: rgba(0, 255, 98, 0.541);
+  stroke-width: 15px;
+}
+h1{
+    
+   text-align: center;
+   font-family: fantasy;
+   color: #fff;
+}
+
+</style>
+
+</head>
+<body>
+  <script  src="min.js"></script>
+<script>
+
+var n = 50,
+    array = d3.shuffle(d3.range(n)),
+    actions = quicksort(array.slice()).reverse();
+
+var margin = {top: 230, right: 40, bottom: 230, left: 40},
+    width = 920 - margin.left - margin.right,
+    height = 600 - margin.top - margin.bottom;
+
+var x = d3.scale.ordinal()
+    .domain(d3.range(n))
+    .rangePoints([0, width]);
+
+var a = d3.scale.linear()
+    .domain([0, n - 1])
+    .range([-45, 45]);
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width + 220)
+    .attr("height", height+100)
+  .append("g")
+    .attr("transform", "translate(" + 100+ "," + 100 + ")");
+
+var line = svg.append("g")
+    .attr("class", "line")
+  .selectAll("line")
+    .data(array)
+  .enter().append("line")
+    .attr("transform", transform)
+    .attr("y2", -height);
+
+var transition = d3.transition()
+    .duration(150)
+    .each("start", function start() {
+      var action = actions.pop();
+      switch (action.type) {
+        case "swap": {
+          var i = action[0],
+              j = action[1],
+              li = line[0][i],
+              lj = line[0][j];
+          line[0][i] = lj;
+          line[0][j] = li;
+          transition.each(function() { line.transition().attr("transform", transform); });
+          break;
+        }
+        case "partition": {
+          line.attr("class", function(d, i) {
+            return i === action.pivot ? "line--pivot"
+                : action.left <= i && i < action.right ? null
+                : "line--inactive";
+          });
+          break;
+        }
+      }
+      if (actions.length) transition = transition.transition().each("start", start);
+      else transition.each("end", function() { line.attr("class", null); });
+    });
+
+function transform(d, i) {
+  return "translate(" + x(i) + "," + height + ")rotate(" + a(d) + ")";
+}
+
+function quicksort(array) {
+  var actions = [];
+
+  function partition(left, right, pivot) {
+    var v = array[pivot];
+    swap(pivot, --right);
+    for (var i = left; i < right; ++i) if (array[i] <= v) swap(i, left++);
+    swap(left, right);
+    return left;
+  }
+
+  function swap(i, j) {
+    if (i === j) return;
+    var t = array[i];
+    array[i] = array[j];
+    array[j] = t;
+    actions.push({type: "swap", "0": i, "1": j});
+  }
+
+  function recurse(left, right) {
+    if (left < right - 1) {
+      var pivot = (left + right) >> 1;
+      actions.push({type: "partition", "left": left, "pivot": pivot, "right": right});
+      pivot = partition(left, right, pivot);
+      recurse(left, pivot);
+      recurse(pivot + 1, right);
+    }
+  }
+
+  recurse(0, array.length);
+  return actions;
+}
+
+</script>
+<h1 >quick sort</h1>
+
+
+    
+</body>
+</html>

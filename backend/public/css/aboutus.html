@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Globals */
+body {
+  font-family: "Inter", sans-serif;
+  max-width: 55rem;
+  padding: 2rem 1.5rem;
+  margin: 10px auto;
+  color: #ffffff;
+  box-shadow: 0 0 5px #03e9f4,
+                0 0 25px #03e9f4,
+                0 0 50px #03e9f4,
+                0 0 100px #03e9f4;
+    background:linear-gradient(rgba(0, 0, 0, 0.80), rgba(0,0,0,0.80));
+    background-size:cover;
+    background-position: center;}
+    article{
+      padding-bottom: 40px;
+    }
+
+h1 {
+  font-weight: 900;
+  font-size: 2.7rem;
+  max-width: 20ch;
+}
+h3{font-weight: 900;
+  font-size: 2rem;
+  max-width: 20ch;}
+h1:hover,h3:hover{
+    text-shadow: 0 0 5px #03e9f4,
+                0 0 25px #03e9f4,
+                0 0 50px #03e9f4,
+                0 0 100px #03e9f4;
+}
+
+p {
+  max-width: 100ch;
+}
+
+a {
+  color: currentcolor;
+}
+
+/* Utilities */
+.auto-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(var(--auto-grid-min-size, 14rem), 1fr)
+  );
+  grid-gap: var(--auto-grid-gap, 0);
+  padding: 0;
+}
+
+.flow > * + * {
+  margin-top: var(--flow-space, 1em);
+
+
+}
+
+/* Composition */
+.team {
+  --flow-space: 2em;
+}
+
+/* Blocks */
+.profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  aspect-ratio: 1/1;
+  position: relative;
+  padding: 1.5rem;
+  color: #ffffff;
+  backface-visibility: hidden;
+  text-decoration: none;
+  overflow: hidden;
+  transition: 0.5s;
+  border: 2px #03e9f4;
+ 
+}
+.profile:hover{
+    box-shadow: 0 0 5px #03e9f4,
+                0 0 25px #03e9f4,
+                0 0 50px #03e9f4,
+                0 0 100px #03e9f4;
+}
+
+.profile::before,
+.profile::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  /*inset: 0;*/
+  top: 0;
+  left: 0;
+  
+}
+
+.profile::before {
+  background: linear-gradient(
+    to top,
+    hsl(0 0% 0% / 0.79) 0%,
+    hsl(0 0% 0% / 0.787) 7.8%,
+    hsl(0 0% 0% / 0.779) 14.4%,
+    hsl(0 0% 0% / 0.765) 20.2%,
+    hsl(0 0% 0% / 0.744) 25.3%,
+    hsl(0 0% 0% / 0.717) 29.9%,
+    hsl(0 0% 0% / 0.683) 34.3%,
+    hsl(0 0% 0% / 0.641) 38.7%,
+    hsl(0 0% 0% / 0.592) 43.3%,
+    hsl(0 0% 0% / 0.534) 48.4%,
+    hsl(0 0% 0% / 0.468) 54.1%,
+    hsl(0 0% 0% / 0.393) 60.6%,
+    hsl(0 0% 0% / 0.31) 68.3%,
+    hsl(0 0% 0% / 0.216) 77.3%,
+    hsl(0 0% 0% / 0.113) 87.7%,
+    hsl(0 0% 0% / 0) 100%
+  );
+  transition: 300ms opacity linear;
+  
+}
+
+.profile::after {
+  
+  opacity: 0;
+  transition: 300ms opacity linear;
+ 
+}
+
+.profile > * {
+  z-index: 1;
+  
+}
+
+.profile img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  z-index: -1;
+  object-fit: cover;
+  filter: grayscale(1);
+  transition: filter 200ms ease, transform 250ms linear;
+}
+
+.profile h2,
+.profile p {
+  transform: translateY(2ex);
+}
+
+.profile h2 {
+  font-size: 1.7rem;
+  line-height: 1.2;
+  font-weight: 900;
+  letter-spacing: 0.03ch;
+  transition: 300ms transform ease;
+  color: #ffffff;
+}
+
+.profile p {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.profile p {
+  opacity: 0;
+  transition: 300ms opacity linear, 300ms transform ease-in-out;
+}
+
+.profile:focus {
+  outline: 0.5rem solid rgb(0, 0, 0);
+  outline-offset: -0.5rem;
+}
+
+.profile:hover :is(h2, p),
+.profile:focus :is(h2, p) {
+  transform: none;
+}
+
+.profile:hover::after,
+.profile:focus::after,
+.profile:hover::before,
+.profile:focus::before {
+  opacity: 0.7;
+}
+
+.profile:hover p,
+.profile:focus p {
+  opacity: 1;
+  transition-delay: 200ms;
+}
+
+.profile:hover img,
+.profile:focus img {
+  filter: grayscale(0);
+  transform: scale(1.05) rotate(1deg);
+}
+.menu{
+    width: 100%;
+    margin: 0;
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+    position:absolute;
+
+}
+
+
+.menu ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 5px;
+    position: relative;
+}
+.menu ul li a{
+   font-size: 1rem;
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+
+}
+.menu ul li a:hover{
+  text-shadow:0 0 5px #03e9f4,
+                0 0 25px #03e9f4,
+                0 0 50px #03e9f4,
+                0 0 100px #03e9f4; 
+}
+.menu ul li::after{
+    content: ' ';
+    height: 3px;
+    width: 0;
+    background: #009688;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    box-shadow:0 0 5px #03e9f4,
+                0 0 25px #03e9f4,
+                0 0 50px #03e9f4,
+                0 0 100px #03e9f4;
+    transition: 0.5s;
+
+}
+.menu ul li:hover:after{
+    width: 100%;
+}
+    </style>
+</head>
+<body>
+    <article class="flow">
+      <h1 >About Us</h1>
+       <p>Data Structures and Algorithms play major role in understanding and solving real world problems.
+          To crack the interviews and get you in the product based companies, prepare the concepts of Data Structures and Algorithms with GO WITH ALGO.
+          Understand the concepts, learn about them, practice with codes and test yourself with us.</p>
+      <h1>Our Team</h1>
+        <p>This team consist of four members as shown below were we build a blog website of database and algorithms  for computer scince students .</p>
+        <div class="team">
+          <ul class="auto-grid" role="list">
+            <li>
+              <a href="https://www.instagram.com/p/CE3IEsNJ024/" target="_blank" class="profile">
+                <h2 class="profile__name">Ratan Karate</h2>
+                <p>Student</p>
+                <img alt="Ratan Karate" src="image/Ratan.jpg" />
+              </a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/p/CMMF_MyJ1KHbvC67O6PRsgndBgULrB1XInZFtY0/" target="_blank" class="profile">
+                <h2 class="profile__name">Shweta jadhav</h2>
+                <p>Student</p>
+                <img alt="Shweta jadhav" src="image/sweta.jpg" />
+              </a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/p/CPOJXJ2BQnw/" target="_blank" class="profile">
+                <h2 class="profile__name">Sagar devadkar </h2>
+                <p>Student</p>
+                <img alt="Sagar devadkar" src="image/sagar.jpg" />
+              </a>
+            </li>
+            <li>
+              <a href="https://swop.link/cool" target="_blank" class="profile">
+                <h2 class="profile__name">Shivani Nimbalkar</h2>
+                <p>Student</p>
+                <img alt="Shivani Nimbalkar" src="image/Shivani.jpeg" />
+              </a>
+            </li>
+           
+          </ul>
+        </div>
+        <h3>Contact us</h3>
+        <p>For any queries or questions you can contact us on
+        
+          
+        </p>
+        <div class="menu">
+          <ul  >
+              <li class=" menu-item"><a href=""><span >twitter</span></a></li>
+               <li class=" menu-item"><a href=""><span >linkedin</span></a></li>
+               <br>
+               <br>
+              <li class=" menu-item"><a href=""><span >youtube</span></a></li>
+              
+                </ul>
+             </div>
+       
+            
+      </article>
+</body>
+</html>
