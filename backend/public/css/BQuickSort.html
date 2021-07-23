@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="barc.css">
+	<link rel="stylesheet" href="style2.css">
+	
+    <title>Document</title>
+</head>
+<div class="menu1">
+	<div class="title1">MENU</div>
+	<ul class="nav1">
+		<li><a href="/Home">Home</a></li>
+		<li><a href="BQuickSort.html">Algo</a></li>
+		<li><a href="">Ds</a></li>
+		<li><a href="aboutus.html">About us</a></li>
+		<li><a href="/index">Logout</a></li>
+	</ul> 
+</div>
+<header class="" role="banner">   
+	<div class="site-title-centered">   
+				<div class="header-image">   
+				  
+				<div class="site-branding"> 
+					
+						<img src="qimage/go.png" alt="" width="100">
+				
+								<h2 >IMPROVE YOUR SKILL WITH </h2> 
+								<h1>GO WITH ALOG</h1> 
+								<p>So Let's Get Started</p>  
+													  
+														</div>  <!-- .site-branding -->                                                                
+	<nav class="social-links" aria-label="Social Menu"></nav>
+		<div class="social-menu">
+		<ul  >
+			<li class=" menu-item"><a href=""><span class="screen-reader-text">twitter</span></a></li>
+			 <li class=" menu-item"><a href=""><span class="screen-reader-text">linkedin</span></a></li>
+			<li class=" menu-item"><a href=""><span class="screen-reader-text">youtube</span></a></li>
+			  </ul>
+		   </div>
+
+			 </nav>
+			
+		 
+		</div>
+	</div><!-- .header-image-->
+			</header>
+
+
+<body onload="NextQuestion(0)">
+	
+	
+	
+    <input type="checkbox" id="navcheck" role="button" title="menu">
+<label for="navcheck" aria-hidden="true" title="menu">
+	<span class="burger">
+		<span class="bar">
+			<span class="visuallyhidden">Menu</span>
+		</span>
+	</span>
+</label>
+
+
+<nav id="menu">
+	<a href="BQuickSort.html">Quick Sort</a>
+	<a href="#" >Murge sort</a>
+	<a href="#">Part1</a>
+	<a href="#">Part1</a>
+	<a href="#">Part1</a>
+	<a href="#">Part1</a>
+</nav>
+
+	
+	<section class="content">
+		<img src="/qimage/ezgif.com-gif-maker (1).gif" alt="">
+		<h1>Quick sort</h1>
+		<p class="para"><strong>Quick sort</strong> is a highly efficient sorting algorithm and is based on partitioning of array of data into smaller arrays. 
+		  A large array is partitioned into two arrays one of which holds values smaller than the specified value, say pivot, 
+		  based on which the partition is made and another array holds values greater than the pivot value.
+
+		  <br>    Quicksort partitions an array and then calls itself recursively twice to sort the two resulting subarrays.
+		   This algorithm is quite efficient for large-sized data sets as its average and worst-case complexity are O(n2), 
+		   respectively.</p>
+
+		   <h1>Quick sort Algorithm</h1>
+		   <img src="/qimage/output-onlinepngtools (5).png" alt="">
+		   <p>Quick sort is one of the divide and conquer algorithm. In quick sort we select a pivot element randomly and then partition the array into two halves and sort them. There are different ways by which we can select the pivot element from the array. They are: </p>
+			<li>First element as pivot</li>	
+			<li>Last element as pivot </li>	
+			<li>Mid element as pivot</li>	
+			<li>Any random element as pivot</li>	
+		<p>	The main key process of quick sort is partitioning. In the given array, select element x as pivot. Putting that pivot element x at its correct position arrange all elements smaller than x to the left of pivot element x and all the greater elements to its right. This is the idea to sort in quick sort.
+			</p>
+		   <pre class='code code-jquery'><label>C++</label><code>
+			/* low  --> Starting index,  high  --> Ending index */
+	  quickSort(arr[], low, high)
+	  {
+		  if (low < high)
+		  {
+			  /* pi is partitioning index, arr[pi] is now
+				 at right place */
+			  pi = partition(arr, low, high);
+	  
+			  quickSort(arr, low, pi - 1);  // Before pi
+			  quickSort(arr, pi + 1, high); // After pi
+		  }
+	  }
+		  </code>
+		</pre>
+
+		
+
+	<h1>Quick sort Example</h1>
+    <p>
+      Quick sort is said to be more efficient than merge sort. In merge sort we divided the array in two subarrays, sort those subarrays and merge them.
+       But in quick sort we don’t really need to divide the array and sort and merge again. In quick sort an array a[1:n] where p is first element and q
+        is last element of array and j is mid element. Consider these two arrays that is (p, j-1) and (j+1, q) and rearrange them such that 
+      p < q always. At the end we don’t need to combine or merge arrays as they were never really divided and we get a sorted array with ascending order.
+	  Quick sort is a space-optimised version of Binary tree sort.
+    </p>
+	
+	<pre class='code code-jquery'><label>C++</label><code>
+		// Quick sort in C++
+	
+		#include <iostream>
+		using namespace std;
+		
+		// function to swap elements
+		void swap(int *a, int *b) {
+		  int t = *a;
+		  *a = *b;
+		  *b = t;
+		}
+		
+		// function to print the array
+		void printArray(int array[], int size) {
+		  int i;
+		  for (i = 0; i < size; i++)
+			cout << array[i] << " ";
+		  cout << endl;
+		}
+		
+		// function to rearrange array (find the partition point)
+		int partition(int array[], int low, int high) {
+			
+		  // select the rightmost element as pivot
+		  int pivot = array[high];
+		  
+		  // pointer for greater element
+		  int i = (low - 1);
+		
+		  // traverse each element of the array
+		  // compare them with the pivot
+		  for (int j = low; j < high; j++) {
+			if (array[j] <= pivot) {
+				
+			  // if element smaller than pivot is found
+			  // swap it with the greater element pointed by i
+			  i++;
+			  
+			  // swap element at i with element at j
+			  swap(&array[i], &array[j]);
+			}
+		  }
+		  
+		  // swap pivot with the greater element at i
+		  swap(&array[i + 1], &array[high]);
+		  
+		  // return the partition point
+		  return (i + 1);
+		}
+		
+		void quickSort(int array[], int low, int high) {
+		  if (low < high) {
+			  
+			// find the pivot element such that
+			// elements smaller than pivot are on left of pivot
+			// elements greater than pivot are on righ of pivot
+			int pi = partition(array, low, high);
+		
+			// recursive call on the left of pivot
+			quickSort(array, low, pi - 1);
+		
+			// recursive call on the right of pivot
+			quickSort(array, pi + 1, high);
+		  }
+		}
+		
+		// Driver code
+		int main() {
+		  int data[] = {8, 7, 6, 1, 0, 9, 2};
+		  int n = sizeof(data) / sizeof(data[0]);
+		  
+		  cout << "Unsorted Array: \n";
+		  printArray(data, n);
+		  
+		  // perform quicksort on data
+		  quickSort(data, 0, n - 1);
+		  
+		  cout << "Sorted array in ascending order: \n";
+		  printArray(data, n);
+		}</code></pre>
+	
+		<button class="custom-btn btn" onclick="window.location='https://www.jdoodle.com/embed/v0/3qzt';"><a>TRY YOUR SELF</a></button>
+		
+	 
+	<p><strong>Applications:</strong> <br>
+		Now you might think how this algorithm can be used in real world. Quick sort is the fastest method to solve any sorting problems. Some examples are:
+		<li>Commercial computing – From list of accounts sorting data through their names, id, dates etc.</li>	 
+		<li>Numerical computing – Sorting numeric data with the help of quick sort</li>	
+		<li>Searching information – From a given list of information quick sort is best fastest way for searching.</li> 
+		</p>
+			<h1>Complexity Analysis:</h1> 
+			<p><strong>Time Complexity</strong>– Time taken by quick sort can be written as <br>
+				T(n) = T(k) + T(n-k-1) + Ꝋ(n) <br>
+				<li> Worst case – Worst case occurs in two situations. First if we pick the smallest or greatest element from the array.
+				 And second if the array is already sorted in ascending or descending order. <br>
+				Recurrence of worst case is - T(n) = T(n-1) + Ꝋ(n) <br>
+				Solution - Ꝋ(n2) </li> <br> <br>
+				<li>Best case  – Best case occurs when we select the middle element as pivot. <br> 
+				Recurrence of best case is – T(n) = 2T(n/2) + Ꝋ(n) <br>
+				Solution - Ꝋ(nLogn) </li> <br> <br>
+				<li>Average case - 
+				Recurrence of average case – T(n) = T(n/9) + T(9n/10) + Ꝋ(n) <br>
+				Solution – 0(nLogn)</li> <br> <br>
+				<li> Space complexity – space complexity depends on the space used in recursion stack. <br>
+				Worst case – 0(n) <br>
+				Average case – 0(Log n) </li><br>
+				</p>
+				<h1>Quize of Quick-Sort</h1>
+				<p>Here are some question for you to solve to test your understanding about Quick sort </p> 
+					<li> In this Quize there will be 5 Questions</li>
+					<li> you will have to solve all of those quistions </li>
+					<li> then the marks will be shown to you </li>
+					<p> then you will have to deside what kind of efforts you have to do for gain extra knowladge of this algorithm.
+				</p>
+      <div class="quizbody"  >
+		<div class="game-quiz-container">
+			<div class="game-details-container">
+				<h1>Score : <span id="player-score"></span> / 5</h1>
+				<h1> Question : <span id="question-number"></span> / 5</h1>
+			</div>
+			<div class="game-question-container">
+				<h1 id="display-question"></h1>
+			</div>
+			<div class="game-options-container">
+
+			 
+				<span class="qspan">
+					<input type="radio" id="option-one" name="option" class="radio" value="optionA" />
+					<label for="option-one" class="option" id="option-one-label"></label>
+				</span>
+
+
+				<span class="qspan">
+					<input type="radio" id="option-two" name="option" class="radio" value="optionB" />
+					<label for="option-two" class="option" id="option-two-label"></label>
+				</span>
+
+
+				<span class="qspan">
+					<input type="radio" id="option-three" name="option" class="radio" value="optionC" />
+					<label for="option-three" class="option" id="option-three-label"></label>
+				</span>
+
+
+				<span class="qspan">
+					<input type="radio" id="option-four" name="option" class="radio" value="optionD" />
+					<label for="option-four" class="option" id="option-four-label"></label>
+				</span>
+<!-- end of modal of quiz details-->
+
+			</div>
+
+			<div class="modal-button-container">
+				<button class="custom-btn btn-13" onclick="handleNextQuestion()">Next Question</button>
+			</div>
+			<div class="modal-container" id="option-modal">
+			  <div class="modal-content-container">
+				   <h1>Please Pick An Option</h1>
+				   <div class="modal-button-container">
+					  <button class="custom-btn btn-13" onclick="closeOptionModal()">Continue</button>
+				  </div>
+			  </div>
+		 </div>
+		</div>
+		 <!-- creating a modal for when quiz ends -->
+		 <div class="modal-container" id="score-modal">
+		  <div class="modal-content-container">
+			  <h1>Congratulations, Quiz Completed.</h1>
+			  <div class="grade-details">
+				  <p>Wrong Answers : <span id="wrong-answers"></span></p>
+				  <p>Right Answers : <span id="right-answers"></span></p>
+				  <p>Grade : <span id="grade-percentage"></span>%</p>
+				  <p ><span id="remarks"></span></p>
+			  </div>
+			  <div class="modal-button-container">
+				  <button class="custom-btn btn-13" onclick="closeScoreModal()">Continue</button>
+			  </div>
+		  </div>
+	  </div>
+	<script src="quiz.js"></script>
+</div>
+	</section>
+
+
+<div class="footer">
+
+    <div class="box-container">
+
+        <div class="box">
+           <img src="/qimage/go.png" alt="">
+        </div>
+		<div class="box">
+            <h3>about us</h3>
+            <p>This team consist of four members as shown below were we build a blog website of database and algorithms  for computer scince students .</p>
+        </div>
+
+
+        <div class="box">
+            <h3>follow us</h3>
+            <a href="#">facebook</a>
+            <a href="#">twitter</a>
+            <a href="#">instagram</a>
+            <a href="#">linkedin</a>
+            <a href="#">youtube</a>
+        </div>
+
+    
+</body>
+        
+</html>
