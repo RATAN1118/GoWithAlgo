@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="barc.css">
+	<link rel="stylesheet" href="style2.css">
+	<script src="quiz.js"></script>
+	
+    <title>Document</title>
+</head>
+<div class="menu1">
+	<div class="title1">MENU</div>
+	<ul class="nav1">
+		<li><a href="/Home">Home</a></li>
+		<li><a href="BQuickSort.html">Algo</a></li>
+		<li><a href="">Ds</a></li>
+		<li><a href="aboutus.html">About us</a></li>
+		<li><a href="/index">Logout</a></li>
+	</ul> 
+</div>
+<header class="" role="banner">   
+	<div class="site-title-centered">   
+				<div class="header-image">   
+				  
+				<div class="site-branding"> 
+					
+						<img src="qimage/go.png" alt="" width="100">
+				
+								<h2 >IMPROVE YOUR SKILL WITH </h2> 
+								<h1>GO WITH ALOG</h1> 
+								<p>So Let's Get Started</p>  
+													  
+														</div>  <!-- .site-branding -->                                                                
+	<nav class="social-links" aria-label="Social Menu"></nav>
+		<div class="social-menu">
+		<ul  >
+			<li class=" menu-item"><a href=""><span class="screen-reader-text">twitter</span></a></li>
+			 <li class=" menu-item"><a href=""><span class="screen-reader-text">linkedin</span></a></li>
+			<li class=" menu-item"><a href=""><span class="screen-reader-text">youtube</span></a></li>
+			  </ul>
+		   </div>
+
+			 </nav>
+			
+		 
+		</div>
+	</div><!-- .header-image-->
+			</header>
+
+
+<body onload="NextQuestion(0)">
+	
+	
+	
+    <input type="checkbox" id="navcheck" role="button" title="menu">
+<label for="navcheck" aria-hidden="true" title="menu">
+	<span class="burger">
+		<span class="bar">
+			<span class="visuallyhidden">Menu</span>
+		</span>
+	</span>
+</label>
+
+
+<nav id="menu">
+	<a href="BQuickSort.html">Quick Sort</a>
+	<a href="Murgesort.html">Murge sort</a>
+	<a href="Bubblesort.html">Bubble sort</a>
+	<a href="insertionsort.html">Insertion sort</a>
+	<a href="#">Part1</a>
+	<a href="#">Part1</a>
+</nav>
+
+	
+	<section class="content">
+		<img src="/qimage/Mergevisulization.gif" alt="">
+		
+		<h1 id="check">Merge sort</h1>
+		
+		<p class="para"><strong>Merge sort</strong>  is also a divide and conquer algorithm. 
+            In merge sort the array is divided into two halves and sorted, and then the sorted elements are merged.
+             Hence the name merge sort algorithm. Lets understand with simple example.</p>
+
+		   <h1>Merge sort Algorithm</h1>
+		   <img src="/qimage/murges.png" alt="">
+		   <p>
+            The MergeSort function repeatedly divides the array into two halves until we reach a stage
+             where we try to perform MergeSort on a subarray of size 1 i.e. p == r. <br>            
+            After that, the merge function comes into play and combines the sorted arrays into larger arrays 
+             until the whole array is merged.
+            </p>
+		   <pre class='code code-jquery'><label>C++</label><code>
+            MergeSort(A, p, r):
+            if p > r 
+                return
+            q = (p+r)/2
+            mergeSort(A, p, q)
+            mergeSort(A, q+1, r)
+            merge(A, p, q, r)
+
+		  </code>
+		</pre>
+
+       <p> To sort an entire array, we need to call MergeSort(A, 0, length(A)-1). <br><br>
+
+        As shown in the image below, the merge sort algorithm recursively divides the array
+         into halves until we reach the base case of array with 1 element. After that, the merge function
+          picks up the sorted sub-arrays and merges them to gradually sort the entire array. </p>
+
+       <h1>The merge Step of Merge Sort</h1> 
+       <p> Every recursive algorithm is dependent on a base case and the ability to combine the results from base cases.
+            Merge sort is no different. The most important part of the merge sort algorithm is, you guessed it, merge step. <br><br>
+
+        The merge step is the solution to the simple problem of merging two sorted lists(arrays) to build one large sorted list(array). <br>
+        The algorithm maintains three pointers, one for each of the two arrays and one for maintaining the current index of the final sorted array.
+    </p>
+
+
+		
+
+        <p><strong>Pseudo code for merge sort:</strong> <br>
+            <li>Declare left and right var which will mark the extreme indices of the array</li> 
+            <li>Left will be assigned to 0 and right will be assigned to n-1</li>
+            <li>Find mid = (left+right)/2</li>
+            <li>Call mergeSort on (left,mid) and (mid+1,rear)</li>
+            <li>Above will continue till left&lt;right</li>
+            <li>Then we will call merge on the 2 subproblems</li> 
+            </p>
+	
+	<pre class='code code-jquery'><label>C++</label><code>
+        #include &lt;iostream&gt;
+            using namespace std;
+            
+            void merge(int arr[], int start, int mid, int end) {
+              
+              int len1 = mid - start + 1;
+              int len2 = end - mid;
+            
+              int leftArr[len1], rightArr[len2];
+            
+              for (int i = 0; i < len1; i++)
+                leftArr[i] = arr[start + i];
+              for (int j = 0; j < len2; j++)
+                rightArr[j] = arr[mid + 1 + j];
+            
+              int i, j, k;
+              i = 0;
+              j = 0;
+              k = start;
+            
+              while (i < len1 && j < len2) {
+                if (leftArr[i] <= rightArr[j]) {
+                  arr[k] = leftArr[i];
+                  i++;
+                } else {
+                  arr[k] = rightArr[j];
+                  j++;
+                }
+                k++;
+              }
+            
+              while (i < len1) {
+                arr[k] = leftArr[i];
+                i++;
+                k++;
+              }
+            
+              while (j < len2) {
+                arr[k] = rightArr[j];
+                j++;
+                k++;
+              }
+            }
+            
+            void mergeSort(int arr[], int start, int end) {
+              if (start < end) {
+                int mid = start + (end - start) / 2;
+            
+                mergeSort(arr, start, mid);
+                mergeSort(arr, mid + 1, end);
+            
+                merge(arr, start, mid, end);
+              }
+            }
+            
+            void display(int arr[], int size) {
+              for (int i = 0; i < size; i++)
+                cout << arr[i] << " ";
+              cout << endl;
+            }
+            
+            int main() {
+              int arr[] = {6, 5, 12, 10, 9, 1};
+              int size = sizeof(arr) / sizeof(arr[0]);
+            
+              cout << "Original array \n";
+              display(arr, size);  
+              
+              mergeSort(arr, 0, size - 1);
+            
+              cout << "Sorted array \n";
+              display(arr, size);
+              return 0;
+            }
+		
+</code></pre>
+	
+		<button class="custom-btn btn" onclick="window.location='https://www.jdoodle.com/embed/v0/3sjl';"><a>TRY YOUR SELF</a></button>
+		
+	 
+	<p><strong>Applications:</strong> <br>
+		There are different applications of merge sort as follows:
+		<li>Used for sorting linked list in 0(n Log n) time</li>	 
+		<li>Used in count inversion problems</li>	
+		<li>Used in external sorting</li> 
+		</p>
+			<h1 onclick="get()">Complexity Analysis:</h1> 
+			<p><strong>Time Complexity</strong> - In general time complexity for merge sort is  <br>
+				T(n) = 2T(n/2) + Ꝋ(n) <br>
+				<li> Worst case, Average case and best case time 
+                    complexity is same for merge sort as you always have to divide the array into two halves 
+                    and then sort. So the time complexity for all the three cases is <br>
+                    T(n) = Ꝋ(n Log n) <br>
+				</li> <br> <br>
+				<li>Space complexity - Ꝋ(n). <br> 
+                </p>
+				<h1>Quize of Merge-Sort</h1>
+				<p>Here are some question for you to solve to test your understanding about Merge sort </p> 
+					<li> In this Quize there will be 5 Questions</li>
+					<li> you will have to solve all of those quistions </li>
+					<li> then the marks will be shown to you </li>
+					<p> then you will have to deside what kind of efforts you have to do for gain extra knowladge of this algorithm.
+				</p>
+      <div class="quizbody"  >
+		<div class="game-quiz-container">
+			<div class="game-details-container">
+				<h1>Score : <span id="player-score"></span> / 5</h1>
+				<h1> Question : <span id="question-number"></span> / 5</h1>
+			</div>
+			<div class="game-question-container">
+				<h1 id="display-question"></h1>
+			</div>
+			<div class="game-options-container">
+
+			 
+				<span class="qspan">
+					<input type="radio" id="option-one" name="option" class="radio" value="optionA" />
+					<label for="option-one" class="option" id="option-one-label"></label>
+				</span>
+
+
+				<span class="qspan">
+					<input type="radio" id="option-two" name="option" class="radio" value="optionB" />
+					<label for="option-two" class="option" id="option-two-label"></label>
+				</span>
+
+
+				<span class="qspan">
+					<input type="radio" id="option-three" name="option" class="radio" value="optionC" />
+					<label for="option-three" class="option" id="option-three-label"></label>
+				</span>
+
+
+				<span class="qspan">
+					<input type="radio" id="option-four" name="option" class="radio" value="optionD" />
+					<label for="option-four" class="option" id="option-four-label"></label>
+				</span>
+<!-- end of modal of quiz details-->
+
+			</div>
+
+			<div class="modal-button-container">
+				<button class="custom-btn btn-13" onclick="handleNextQuestion()">Next Question</button>
+			</div>
+			<div class="modal-container" id="option-modal">
+			  <div class="modal-content-container">
+				   <h1>Please Pick An Option</h1>
+				   <div class="modal-button-container">
+					  <button class="custom-btn btn-13" onclick="closeOptionModal()">Continue</button>
+				  </div>
+			  </div>
+		 </div>
+		</div>
+		 <!-- creating a modal for when quiz ends -->
+		 <div class="modal-container" id="score-modal">
+		  <div class="modal-content-container">
+			  <h1>Congratulations, Quiz Completed.</h1>
+			  <div class="grade-details">
+				  <p>Wrong Answers : <span id="wrong-answers"></span></p>
+				  <p>Right Answers : <span id="right-answers"></span></p>
+				  <p>Grade : <span id="grade-percentage"></span>%</p>
+				  <p ><span id="remarks"></span></p>
+			  </div>
+			  <div class="modal-button-container">
+				  <button class="custom-btn btn-13" onclick="closeScoreModal()">Continue</button>
+			  </div>
+		  </div>
+	  </div>
+	
+</div>
+<script>
+
+      </script>
+	</section>
+
+
+<div class="footer">
+
+    <div class="box-container">
+
+        <div class="box">
+           <img src="/qimage/go.png" alt="">
+        </div>
+		<div class="box">
+            <h3>about us</h3>
+            <p>This team consist of four members as shown below were we build a blog website of database and algorithms  for computer scince students .</p>
+        </div>
+
+
+        <div class="box">
+            <h3>follow us</h3>
+            <a href="#">facebook</a>
+            <a href="#">twitter</a>
+            <a href="#">instagram</a>
+            <a href="#">linkedin</a>
+            <a href="#">youtube</a>
+        </div>
+
+    
+</body>
+        
+</html>

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="barc.css">
+	<link rel="stylesheet" href="style2.css">
+	<script src="quiz.js"></script>
+	
+    <title>Document</title>
+</head>
+<div class="menu1">
+	<div class="title1">MENU</div>
+	<ul class="nav1">
+		<li><a href="/Home">Home</a></li>
+		<li><a href="BQuickSort.html">Algo</a></li>
+		<li><a href="">Ds</a></li>
+		<li><a href="aboutus.html">About us</a></li>
+		<li><a href="/index">Logout</a></li>
+	</ul> 
+</div>
+<header class="" role="banner">   
+	<div class="site-title-centered">   
+				<div class="header-image">   
+				  
+				<div class="site-branding"> 
+					
+						<img src="qimage/go.png" alt="" width="100">
+				
+								<h2 >IMPROVE YOUR SKILL WITH </h2> 
+								<h1>GO WITH ALOG</h1> 
+								<p>So Let's Get Started</p>  
+													  
+														</div>  <!-- .site-branding -->                                                                
+	<nav class="social-links" aria-label="Social Menu"></nav>
+		<div class="social-menu">
+		<ul  >
+			<li class=" menu-item"><a href=""><span class="screen-reader-text">twitter</span></a></li>
+			 <li class=" menu-item"><a href=""><span class="screen-reader-text">linkedin</span></a></li>
+			<li class=" menu-item"><a href=""><span class="screen-reader-text">youtube</span></a></li>
+			  </ul>
+		   </div>
+
+			 </nav>
+			
+		 
+		</div>
+	</div><!-- .header-image-->
+			</header>
+
+
+<body onload="NextQuestion(0)">
+	
+	
+	
+    <input type="checkbox" id="navcheck" role="button" title="menu">
+<label for="navcheck" aria-hidden="true" title="menu">
+	<span class="burger">
+		<span class="bar">
+			<span class="visuallyhidden">Menu</span>
+		</span>
+	</span>
+</label>
+
+
+<nav id="menu">
+	<a href="BQuickSort.html">Quick Sort</a>
+	<a href="Murgesort.html">Murge sort</a>
+	<a href="Bubblesort.html">Bubble sort</a>
+	<a href="insertionsort.html">Insertion sort</a>
+	<a href="#">Part1</a>
+	<a href="#">Part1</a>
+</nav>
+
+	
+	<section class="content">
+		<img src="/qimage/bubble1.gif" alt="">
+		
+		<h1 id="check">Bubble sort</h1>
+		
+		<p class="para"><strong>Bubble sort</strong> is a simple sorting algorithm. In this technique you 
+			compare two adjacent elements and swap them to place them in order. Thus, bubble sort is also known as comparison sort algorithm.</p>
+
+		   <h1>Bubble sort Algorithm</h1>
+		   
+		   <pre class='code code-jquery'><label>C++</label><code>
+			bubbleSort( Arr[], totat_elements)
+   
+   for i = 0 to total_elements - 1 do:
+      swapped = false
+		
+      for j = 0 to total_elements - i - 2 do:
+      
+         /* compare the adjacent elements */   
+         if Arr[j] > Arr[j+1] then
+            /* swap them */
+            swap(Arr[j], Arr[j+1])		 
+            swapped = true
+         end if
+         
+      end for
+      
+      /*if no number was swapped that means 
+      array is sorted now, break the loop.*/
+      
+      if(not swapped) then
+         break
+      end if
+      
+   end for
+   
+end
+
+		 
+
+		  </code>
+		</pre>
+
+       <p> The algorithm is quite simple. Assume a list or array of n elements and the swap function compares and if the first element
+		    is greater than the second element then swap them. This loop goes on till the last element and the array is sorted. But this 
+			algorithm is not useful for sorting huge data. So we can apply this sorting algorithm in few cases where data is small.
+			 But still learning the bubble sort is important as it teaches the basic sorting technique. Lets try to understand with a small
+			  example
+    </p>
+	<img src="/qimage/bubble.png" alt="">
+	<p>
+		As you can see in the above figure, two elements are compared and swapped and this process continues till all the
+		 elements are sorted and the finally we get a sorted array.
+	</p>
+
+
+		
+
+        <p><strong>Pseudo code for Bubble sort:</strong> <br>
+             begin BubbleSort(list) <br>
+  			 for all elements of list <br>
+      		 if list[i] > list[i+1] <br>
+         	 swap(list[i], list[i+1]) <br>
+     		 end if <br>
+  			 end for <br>
+  			 return list <br>
+  			 end BubbleSort <br>
+		</p>
+	
+	<pre class='code code-jquery'><label>C++</label><code>
+        
+		// Bubble sort in C++
+
+		#include &lt;iostream&gt;
+		using namespace std;
+		
+		// perform bubble sort
+		void bubbleSort(int array[], int size) {
+		
+		  // loop to access each array element
+		  for (int step = 0; step < (size-1); ++step) {
+			  
+			// loop to compare array elements
+			for (int i = 0; i < size - (step-1); ++i) {
+		
+			  // compare two adjacent elements
+			  // change > to < to sort in descending order
+			  if (array[i] > array[i + 1]) {
+		
+				// swapping elements if elements
+				// are not in the intended order
+				int temp = array[i];
+				array[i] = array[i + 1];
+				array[i + 1] = temp;
+			  }
+			}
+		  }
+		}
+		
+		// print array
+		void printArray(int array[], int size) {
+		  for (int i = 0; i < size; ++i) {
+			cout << "  " << array[i];
+		  }
+		  cout << "\n";
+		}
+		
+		int main() {
+		  int data[] = {-2, 45, 0, 11, -9};
+		  cout<<"Umsorted array is:::  ";
+		  for (int i = 0; i < 5; ++i) {
+			cout << "  " << data[i];
+		  }
+		  
+		  // find array's length
+		  int size = sizeof(data) / sizeof(data[0]);
+		  
+		  bubbleSort(data, size);
+		  
+		  cout << "\nSorted Array in Ascending Order:\n";  
+		  printArray(data, size);
+		}
+		
+</code></pre>
+	
+		<button class="custom-btn btn" onclick="window.location='https://www.jdoodle.com/embed/v0/3tEp';"><a>TRY YOUR SELF</a></button>
+		
+	 
+	<p><strong>Applications:</strong> <br>
+		As bubble sort cannot be used to sort huge data, it is mostly used for educational purpose
+		 to teach students the basic concept of sorting. <br>
+		 If we think about the real world problem consider a queue of people standing at bus stand 
+		 and trying to arrange them according to their height.
+		</p>
+			<h1>Complexity Analysis:</h1> 
+			<p><strong>Time Complexity</strong> 
+				<li> Best case – Best case time complexity occurs when the array is already sorted, then no
+					 swapping is required. So, it is 0(n) as it has to traverse all elements only once.<br>
+                 <br>
+				</li>
+				<li>Worst case and Average case – Both are same for bubble sort. It occurs when array is in reversed order i.e. n2 or 0(n2).</li> <br> <br>
+				<li>Space complexity - Space complexity for bubble sort is 0(1), because it needs just 1 temporary memory space for swapping. <br> 
+                </p>
+				<h1>Quize of Bubble sort</h1>
+				<p>Here are some question for you to solve to test your understanding about Bubble sort </p> 
+					<li> In this Quize there will be 5 Questions</li>
+					<li> you will have to solve all of those quistions </li>
+					<li> then the marks will be shown to you </li>
+					<p> then you will have to deside what kind of efforts you have to do for gain extra knowladge of this algorithm.
+				</p>
+      <div class="quizbody"  >
+		<div class="game-quiz-container">
+			<div class="game-details-container">
+				<h1>Score : <span id="player-score"></span> / 5</h1>
+				<h1> Question : <span id="question-number"></span> / 5</h1>
+			</div>
+			<div class="game-question-container">
+				<h1 id="display-question"></h1>
+			</div>
+			<div class="game-options-container">
+
+			 
+				<span class="qspan">
+					<input type="radio" id="option-one" name="option" class="radio" value="optionA" />
+					<label for="option-one" class="option" id="option-one-label"></label>
+				</span>
+
+
+				<span class="qspan">
+					<input type="radio" id="option-two" name="option" class="radio" value="optionB" />
+					<label for="option-two" class="option" id="option-two-label"></label>
+				</span>
+
+
+				<span class="qspan">
+					<input type="radio" id="option-three" name="option" class="radio" value="optionC" />
+					<label for="option-three" class="option" id="option-three-label"></label>
+				</span>
+
+
+				<span class="qspan">
+					<input type="radio" id="option-four" name="option" class="radio" value="optionD" />
+					<label for="option-four" class="option" id="option-four-label"></label>
+				</span>
+<!-- end of modal of quiz details-->
+
+			</div>
+
+			<div class="modal-button-container">
+				<button class="custom-btn btn-13" onclick="handleNextQuestion()">Next Question</button>
+			</div>
+			<div class="modal-container" id="option-modal">
+			  <div class="modal-content-container">
+				   <h1>Please Pick An Option</h1>
+				   <div class="modal-button-container">
+					  <button class="custom-btn btn-13" onclick="closeOptionModal()">Continue</button>
+				  </div>
+			  </div>
+		 </div>
+		</div>
+		 <!-- creating a modal for when quiz ends -->
+		 <div class="modal-container" id="score-modal">
+		  <div class="modal-content-container">
+			  <h1>Congratulations, Quiz Completed.</h1>
+			  <div class="grade-details">
+				  <p>Wrong Answers : <span id="wrong-answers"></span></p>
+				  <p>Right Answers : <span id="right-answers"></span></p>
+				  <p>Grade : <span id="grade-percentage"></span>%</p>
+				  <p ><span id="remarks"></span></p>
+			  </div>
+			  <div class="modal-button-container">
+				  <button class="custom-btn btn-13" onclick="closeScoreModal()">Continue</button>
+			  </div>
+		  </div>
+	  </div>
+	
+</div>
+<script>
+
+      </script>
+	</section>
+
+
+<div class="footer">
+
+    <div class="box-container">
+
+        <div class="box">
+           <img src="/qimage/go.png" alt="">
+        </div>
+		<div class="box">
+            <h3>about us</h3>
+            <p>This team consist of four members as shown below were we build a blog website of database and algorithms 
+                 for computer scince students .</p>
+        </div>
+
+
+        <div class="box">
+            <h3>follow us</h3>
+            <a href="#">facebook</a>
+            <a href="#">twitter</a>
+            <a href="#">instagram</a>
+            <a href="#">linkedin</a>
+            <a href="#">youtube</a>
+        </div>
+
+    
+</body>
+        
+</html>

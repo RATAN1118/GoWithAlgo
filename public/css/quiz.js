@@ -44,7 +44,50 @@
         optionC: "Murge sort",
         optionD: "Binary tree sort",
         correctOption: "optionD"
+    },
+    {
+        question: "Merge sort uses which of the following technique to implement sorting?",
+        optionA: "backtracking",
+        optionB: "greedy algorithm",
+        optionC: "divide and conquer",
+        optionD: "dynamic programming",
+        correctOption: "optionC"
+    },
+
+    {
+        question: "What is the average case time complexity of merge sort?",
+        optionA: "O(n log n)",
+        optionB: "O(n2)",
+        optionC: "O(n2 log n)",
+        optionD: "O(n log n2)",
+        correctOption: "optionA"
+    },
+    {
+        question: "What is the auxiliary space complexity of merge sort?",
+        optionA: "O(1)",
+        optionB: "O(log n)",
+        optionC: "O(n)",
+        optionD: "O(n log n)",
+        correctOption: "optionC"
+    },
+    {
+        question: "Merge sort is preferred for arrays over linked lists",
+        optionA: "true",
+        optionB: "false",
+        optionC: "may be",
+        optionD: "can't say",
+        correctOption: "optionB"
+    },
+    {
+        question: "Which of the following sorting algorithm does not use recursion",
+        optionA: "Merge sort",
+        optionB: "Quick sort",
+        optionC: "Insertion sort",
+        optionD: "bottom up merge sort",
+        correctOption: "optionD"
     }
+
+
 
 
 ]
@@ -52,16 +95,32 @@
 
 let shuffledQuestions = [] //empty array to hold shuffled selected questions out of all available questions
 
+
 function handleQuestions() { 
     //function to shuffle and push 10 questions to shuffledQuestions array
 //app would be dealing with 10questions per session
-    var i =0;
-    while (shuffledQuestions.length <= 4) {
+var name = document.getElementById("check").innerHTML;
+  alert(name);
+  var m = 0;
+  if(name==="Quick sort"){
+    m= 0;
+  }
+  else if(name==="Merge sort"){
+      m=5;
+  }
+  var i = m;
+
+
+  
+    while (shuffledQuestions.length <= (5+m-1)) {
         const random = questions[i]
             shuffledQuestions.push(random)
             i++;
     }
+   
 }
+
+
 
 
 let questionNumber = 1 //holds the current question number
@@ -174,7 +233,7 @@ function handleEndGame() {
         remark = "Bad Grades, Keep Practicing."
         remarkColor = "red"
     }
-    else if (playerScore >= 2 && playerScore < 7) {
+    else if (playerScore >= 2 && playerScore <= 3) {
         remark = "Average Grades, You can do better."
         remarkColor = "orange"
     }

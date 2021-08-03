@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="barc.css">
+	<link rel="stylesheet" href="style2.css">
+	<script src="quiz.js"></script>
+	
+    <title>Document</title>
+</head>
+<div class="menu1">
+	<div class="title1">MENU</div>
+	<ul class="nav1">
+		<li><a href="/Home">Home</a></li>
+		<li><a href="BQuickSort.html">Algo</a></li>
+		<li><a href="">Ds</a></li>
+		<li><a href="aboutus.html">About us</a></li>
+		<li><a href="/index">Logout</a></li>
+	</ul> 
+</div>
+<header class="" role="banner">   
+	<div class="site-title-centered">   
+				<div class="header-image">   
+				  
+				<div class="site-branding"> 
+					
+						<img src="qimage/go.png" alt="" width="100">
+				
+								<h2 >IMPROVE YOUR SKILL WITH </h2> 
+								<h1>GO WITH ALOG</h1> 
+								<p>So Let's Get Started</p>  
+													  
+														</div>  <!-- .site-branding -->                                                                
+	<nav class="social-links" aria-label="Social Menu"></nav>
+		<div class="social-menu">
+		<ul  >
+			<li class=" menu-item"><a href=""><span class="screen-reader-text">twitter</span></a></li>
+			 <li class=" menu-item"><a href=""><span class="screen-reader-text">linkedin</span></a></li>
+			<li class=" menu-item"><a href=""><span class="screen-reader-text">youtube</span></a></li>
+			  </ul>
+		   </div>
+
+			 </nav>
+			
+		 
+		</div>
+	</div><!-- .header-image-->
+			</header>
+
+
+<body onload="NextQuestion(0)">
+	
+	
+	
+    <input type="checkbox" id="navcheck" role="button" title="menu">
+<label for="navcheck" aria-hidden="true" title="menu">
+	<span class="burger">
+		<span class="bar">
+			<span class="visuallyhidden">Menu</span>
+		</span>
+	</span>
+</label>
+
+
+<nav id="menu">
+	<a href="BQuickSort.html">Quick Sort</a>
+	<a href="Murgesort.html">Murge sort</a>
+	<a href="Bubblesort.html">Bubble sort</a>
+	<a href="insertionsort.html">Insertion sort</a>
+	<a href="#">Part1</a>
+	<a href="#">Part1</a>
+</nav>
+
+	
+	<section class="content">
+		<img src="/qimage/insertion1.gif" alt="">
+		
+		<h1 id="check">Insertion sort</h1>
+		
+		<p class="para"><strong>Insertion sort</strong> is also a very simple sorting algorithm. This algorithm works on the principle
+             of inserting elements in a particular position hence the name insertion sort. 
+             Think about how you sort a pack of cards, you just take a part of pack considering it as sorted and the other half 
+             pack as unsorted and picks every card and insert it at its correct position. Same is with the insertion sort.
+		   <h1>Insertion sort Algorithm</h1>
+		   
+		   <pre class='code code-jquery'><label>C++</label><code>
+			INSERTION – SORT(A)
+	For i = 1 to n
+		key  A[i]
+		j  i – 1
+		while j > = 0 and A[j] > key
+			A[j+1]  A[j]
+			j  j – 1
+		End while
+		A[j+1]  key
+	End for
+		  </code>
+		</pre>
+
+       <p> To sort an array of size n in ascending order: 
+        <li>Iterate from arr[1] to arr[n] over the array.</li>
+       <li> Compare the current element (key) to its predecessor. </li>
+        <li>If the key element is smaller than its predecessor, compare it to the elements before. 
+            Move the greater elements one position up to make space for the swapped element.</li> 
+    </p>
+	<img src="/qimage/insertion.png" alt="">
+	<p>
+		As you can see in the above figure, The array elements are compared with each other
+         sequentially and then arranged simultaneously in some particular order.
+	</p>
+
+	
+	<pre class='code code-jquery'><label>C++</label><code>
+        
+	
+		//Insertion sort Implementation in C++:
+#include &lt;stdlib.h&gt;
+#include &lt;iostream&gt;
+
+using namespace std;
+
+//member functions declaration
+void insertionSort(int arr[], int length);
+void printArray(int array[], int size);
+
+// main function
+int main() 
+{
+    int array[6] = {5, 1, 6, 2, 4, 3};
+    int j;
+    cout<<"Unsorted array:: \n";
+    for (j = 0; j < 6; j++)
+    {
+        cout <<" "<< array[j];  
+    }
+    cout << endl;
+    // calling insertion sort function to sort the array
+    insertionSort(array, 6);
+    return 0;
+}
+
+void insertionSort(int arr[], int length) 
+{
+    int i, j, key;
+    for (i = 1; i < length; i++) 
+    {
+        key = arr[i];
+        j = i-1;
+        
+        while (j >= 0 && arr[j] >key) 
+        {
+            arr[j+1] = arr[j];
+            j--;
+        }
+        arr[j +1] = key;
+        
+    }
+    cout << "Sorted Array: ";
+    // print the sorted array
+    printArray(arr, length);
+}
+
+// function to print the given array 
+void printArray(int array[], int size)
+{ 
+    int j;
+    for (j = 0; j < size; j++)
+    {
+        cout <<" "<< array[j];  
+    }
+    cout << endl;
+}
+
+</code></pre>
+	
+		<button class="custom-btn btn" onclick="window.location='https://www.jdoodle.com/embed/v0/3tFW';"><a>TRY YOUR SELF</a></button>
+		
+	 
+	<p><strong>Applications:</strong> <br>
+		This sorting algorithm can be used on arrays having at most 30 elements. 
+        Not more than that as it is not appropriate to use this algorithm for huge data.  
+		</p>
+			<h1>Complexity Analysis:</h1> 
+			<p><strong>Time Complexity</strong> 
+				
+                   <li>Worst Case Time Complexity [ Big-O ]: O(n2)</li> 
+                     
+                   <li>Best Case Time Complexity [Big-omega]: O(n)</li> 
+                    
+                   <li> Average Time Complexity [Big-theta]: O(n2)</li> 
+                     
+                </p>
+				<h1>Quize of Insertion sort</h1>
+				<p>Here are some question for you to solve to test your understanding about Insertion sort </p> 
+					<li> In this Quize there will be 5 Questions</li>
+					<li> you will have to solve all of those quistions </li>
+					<li> then the marks will be shown to you </li>
+					<p> then you will have to deside what kind of efforts you have to do for gain extra knowladge of this algorithm.
+				</p>
+      <div class="quizbody"  >
+		<div class="game-quiz-container">
+			<div class="game-details-container">
+				<h1>Score : <span id="player-score"></span> / 5</h1>
+				<h1> Question : <span id="question-number"></span> / 5</h1>
+			</div>
+			<div class="game-question-container">
+				<h1 id="display-question"></h1>
+			</div>
+			<div class="game-options-container">
+
+			 
+				<span class="qspan">
+					<input type="radio" id="option-one" name="option" class="radio" value="optionA" />
+					<label for="option-one" class="option" id="option-one-label"></label>
+				</span>
+
+
+				<span class="qspan">
+					<input type="radio" id="option-two" name="option" class="radio" value="optionB" />
+					<label for="option-two" class="option" id="option-two-label"></label>
+				</span>
+
+
+				<span class="qspan">
+					<input type="radio" id="option-three" name="option" class="radio" value="optionC" />
+					<label for="option-three" class="option" id="option-three-label"></label>
+				</span>
+
+
+				<span class="qspan">
+					<input type="radio" id="option-four" name="option" class="radio" value="optionD" />
+					<label for="option-four" class="option" id="option-four-label"></label>
+				</span>
+<!-- end of modal of quiz details-->
+
+			</div>
+
+			<div class="modal-button-container">
+				<button class="custom-btn btn-13" onclick="handleNextQuestion()">Next Question</button>
+			</div>
+			<div class="modal-container" id="option-modal">
+			  <div class="modal-content-container">
+				   <h1>Please Pick An Option</h1>
+				   <div class="modal-button-container">
+					  <button class="custom-btn btn-13" onclick="closeOptionModal()">Continue</button>
+				  </div>
+			  </div>
+		 </div>
+		</div>
+		 <!-- creating a modal for when quiz ends -->
+		 <div class="modal-container" id="score-modal">
+		  <div class="modal-content-container">
+			  <h1>Congratulations, Quiz Completed.</h1>
+			  <div class="grade-details">
+				  <p>Wrong Answers : <span id="wrong-answers"></span></p>
+				  <p>Right Answers : <span id="right-answers"></span></p>
+				  <p>Grade : <span id="grade-percentage"></span>%</p>
+				  <p ><span id="remarks"></span></p>
+			  </div>
+			  <div class="modal-button-container">
+				  <button class="custom-btn btn-13" onclick="closeScoreModal()">Continue</button>
+			  </div>
+		  </div>
+	  </div>
+	
+</div>
+<script>
+
+      </script>
+	</section>
+
+
+<div class="footer">
+
+    <div class="box-container">
+
+        <div class="box">
+           <img src="/qimage/go.png" alt="">
+        </div>
+		<div class="box">
+            <h3>about us</h3>
+            <p>This team consist of four members as shown below were we build a blog website of database and algorithms 
+                 for computer scince students .</p>
+        </div>
+
+
+        <div class="box">
+            <h3>follow us</h3>
+            <a href="#">facebook</a>
+            <a href="#">twitter</a>
+            <a href="#">instagram</a>
+            <a href="#">linkedin</a>
+            <a href="#">youtube</a>
+        </div>
+
+    
+</body>
+        
+</html>
