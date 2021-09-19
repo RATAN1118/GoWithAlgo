@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="barc.css">
+	<link rel="stylesheet" href="style2.css">
+	<script src="quiz.js"></script>
+	<style>
+		nav::before {
+			background-color: #ff3300a8;}
+
+		</style>
+	
+    <title>ARRAY</title>
+</head>
+<div class="menu1">
+	<div class="title1">MENU</div>
+	<ul class="nav1">
+		<li><a href="/Home">Home</a></li>
+		<li><a href="BQuickSort.html">Algo</a></li>
+		<li><a href="ARRAY.html">Ds</a></li>
+		<li><a href="aboutus.html">About us</a></li>
+		<li><a href="/index">Logout</a></li>
+	</ul> 
+</div>
+<header class="" role="banner">   
+	<div class="site-title-centered">   
+				<div class="header-image">   
+				  
+				<div class="site-branding"> 
+						<img src="qimage/go.png" alt="" width="100">
+					
+								<h2 >IMPROVE YOUR SKILL WITH </h2> 
+								<h1>GO WITH ALOG</h1> 
+							
+								<p>So Let's Get Started</p>  
+													  
+														</div>  <!-- .site-branding -->                                                                
+	<nav class="social-links" aria-label="Social Menu"></nav>
+		<div class="social-menu">
+		<ul  >
+			<li class=" menu-item"><a href=""><span class="screen-reader-text">twitter</span></a></li>
+			 <li class=" menu-item"><a href=""><span class="screen-reader-text">linkedin</span></a></li>
+			<li class=" menu-item"><a href=""><span class="screen-reader-text">youtube</span></a></li>
+			  </ul>
+		   </div>
+
+			 </nav>
+			
+		 
+		</div>
+	</div><!-- .header-image-->
+			</header>
+
+
+<body onload="NextQuestion(0)">
+	
+	
+	
+    <input type="checkbox" id="navcheck" role="button" title="menu">
+<label for="navcheck" aria-hidden="true" title="menu">
+	<span class="burger">
+		<span class="bar">
+			<span class="visuallyhidden">Menu</span>
+		</span>
+	</span>
+</label>
+
+
+<nav id="menu">
+	<a href="ARRAY.html">ARRAY</a>
+	<a href="LinkedList.html">LinkedList</a>
+	<a href="#">Stack</a>
+	<a href="#">Queue</a>
+	<a href="#">Part1</a>
+	<a href="#">Part1</a>
+</nav>
+
+	
+	<section class="content">
+		
+		<h1 id="check">ARRAY</h1>
+		<img src="/qimage/arrayy.png" alt="">
+		
+		<p class="para"><strong>Array</strong> is a container which can hold a fix number of items and these items should be of the
+             same type. Most of the data structures make use of arrays to implement their algorithms. Following are the important terms 
+             rstand the concept of Array. <br>
+            <strong>Element</strong> − Each item stored in an array is called an element. <br>
+           <strong>Indexs</strong> − Each location of an element in an array has a numerical index, which is used to identify the element.</p>
+		   <h1>Array Representation</h1>
+           <p>Arrays can be declared in various ways in different languages. 
+            For illustration, let's take C array declaration.
+            </p>
+           
+		   
+		  
+
+           <img src="qimage/arraysize.png" alt="">
+
+       <p>
+        As per the above illustration, following are the important points to be considered. <br>
+
+        Index starts with 0. <br>
+        
+        Array length is 6 which means it can store 6 elements. <br>
+        
+        Each element can be accessed via its index. For example, we can fetch an element at index 5 as 6. <br>
+        
+        
+    </p>
+	<h1>Types of Array</h1>
+       <p> arrays are classified into two types. They are as follows... <br>
+        <ol>
+            <li><strong>Single Dimensional Array / One Dimensional Array</strong> </li>
+            <li> <strong>Multi Dimensional Array</strong> </li>
+        </ol> </p>	
+        <h2>Single Dimensional Array</h2>
+        <p>
+        Single dimensional arrays are used to store list of values of same datatype. In other words, 
+        single dimensional arrays are used to store a row of values. In single dimensional array, data is stored in linear form. <br>
+ 	    
+        <strong> Declaration of Single Dimensional Array</strong> <br>
+        We use the following general syntax for declaring a single dimensional array... <br>
+        <h2> &gt;&gt;  datatype arrayName [ size ] ; &lt;&lt;</h2>
+            
+    </p>
+    <p>>>Example Code <br>
+        <strong>int rollNumbers [60] ;</strong>  <br>
+         The above declaration of single dimensional array reserves 60 continuous memory locations of 2 bytes each
+         with the name rollNumbers and tells the compiler to allow only integer values into those memory locations.</p>
+
+	
+	
+	<pre class='code code-jquery'><label>C++</label><code>
+        
+	
+		//ARRAY Implementation in C++:
+
+#include &lt;iostream&gt;
+    using namespace std;
+    
+    int main() {
+        int numbers[5] = {7, 5, 6, 12, 35};
+    
+        cout << "The numbers are: ";
+    
+        //  Printing array elements
+        // using range based for loop
+        for (const int &n : numbers) {
+            cout << n << "  ";
+        }
+    
+    
+        cout << "\nThe numbers are: ";
+    
+        //  Printing array elements
+        // using traditional for loop
+        for (int i = 0; i < 5; ++i) {
+            cout << numbers[i] << "  ";
+        }
+    
+        return 0;
+    }
+
+</code></pre>
+	
+		<button class="custom-btn btn" onclick="window.location='https://www.jdoodle.com/embed/v0/3tFW';"><a>TRY YOUR SELF</a></button>
+		
+        
+        <h2>Initialization of Single Dimensional Array</h2>
+        <img src="qimage/arrayy.png" alt="">
+       <p>We use the following general syntax for declaring and initializing a single dimensional array with size and initial values. <br>
+        <strong>datatype arrayName [ size ] = {value1, value2, ...} ;</strong> <br>
+        Example Code <br>
+        int person [6] = { 1, 2, 3, 4, 5, 6 } ; <br>
+        The above declaration of single dimensional array reserves 6 contiguous memory locations of 2 bytes each with the name marks 
+        and initializes with value 1 in first memory location, 2 in second memory location, 3 in third memory location, 4 in fourth
+         memory location, 5 in fifth memory location and 6 in sixth memory location. <br>  </p>
+       <h2>Accessing Elements of Single Dimensional Array</h2> 
+       <p> To access the elements of single dimensional array we use array name followed by index value of
+        the element that to be accessed. Here the index value must be enclosed in square braces. Index value of an element 
+        in an array is the reference number given to each element at the time of memory allocation. The index value of single 
+        dimensional array starts with zero (0) . <br>
+       
+       
+       We use the following general syntax to access individual elements of single dimensional array... <br>
+      <strong>arrayName [ indexValue ]</strong> <br>
+       Example Code <br>
+       person [2] = 3 ; <br>
+       In the above statement, the third element of 'person' array is assinged with value '3'.</p>
+        
+       
+       <h2>Multi Dimensional Array</h2>
+      <p> An array created with more than one dimension (size) is called as multi dimensional array. <br>
+       
+      <strong>Declaration of Two Dimensional Array</strong> <br>
+       We use the following general syntax for declaring a two dimensional array... <br> </p>
+     <h2> >> datatype arrayName [ rowSize ] [ columnSize ] ; &lt;&lt;</h2> 
+      <p> Example Code <br>
+      <strong>int matrix_A [2][3] ;</strong> <br>
+       The above declaration of two dimensional array reserves 6 continuous memory locations of 2 bytes each in the form of 2
+        rows and 3 columns.</p>
+      <h2>Initialization of Two Dimensional Array</h2> 
+      <p> We use the following general syntax for declaring and initializing a two dimensional array with specific number 
+          of rows and coloumns with initial values. <br>
+      <strong>datatype arrayName [rows][colmns] = {{r1c1value, r1c2value, ...},{r2c1, r2c2,...}...} ;</strong> <br>
+       Example Code <br>
+       int matrix_A [2][3] = { {1, 2, 3},{4, 5, 6} } ; <br>
+       The above declaration of two-dimensional array reserves 6 contiguous memory locations of 2 bytes each in the form of
+        2 rows and 3 columns. And the first row is initialized with values 1, 2 & 3 and second row is initialized with values 4, 5 & 6.</p>
+       <h2>Accessing Individual Elements of Two Dimensional Array</h2> 
+       <p> To access elements of a two-dimensional array we use array name followed by row index value and column index value of
+            the element that to be accessed. Here the row and column index values must be enclosed in separate square braces. <br>
+       
+       We use the following general syntax to access the individual elements of a two-dimensional array... <br>
+      <strong>arrayName [ rowIndex ] [ columnIndex ]</strong> <br>
+       Example Code <br>
+       matrix_A [0][1] = 10 ; <br>
+       In the above statement, the element with row index 0 and column index 1 of matrix_A array is assinged with value 10.</p>
+       
+       
+       
+        
+				<h1>Quiz of ARRAY</h1>
+				<p>Here are some question for you to solve to test your understanding about ARRAY </p> 
+					<li> In this Quize there will be 5 Questions</li>
+					<li> you will have to solve all of those quistions </li>
+					<li> then the marks will be shown to you </li>
+					<p> then you will have to deside what kind of efforts you have to do for gain extra knowladge of this algorithm.
+				</p>
+      <div class="quizbody"  >
+		<div class="game-quiz-container">
+			<div class="game-details-container">
+				<h1>Score : <span id="player-score"></span> / 5</h1>
+				<h1> Question : <span id="question-number"></span> / 5</h1>
+			</div>
+			<div class="game-question-container">
+				<h1 id="display-question"></h1>
+			</div>
+			<div class="game-options-container">
+
+			 
+				<span class="qspan">
+					<input type="radio" id="option-one" name="option" class="radio" value="optionA" />
+					<label for="option-one" class="option" id="option-one-label"></label>
+				</span>
+
+
+				<span class="qspan">
+					<input type="radio" id="option-two" name="option" class="radio" value="optionB" />
+					<label for="option-two" class="option" id="option-two-label"></label>
+				</span>
+
+
+				<span class="qspan">
+					<input type="radio" id="option-three" name="option" class="radio" value="optionC" />
+					<label for="option-three" class="option" id="option-three-label"></label>
+				</span>
+
+
+				<span class="qspan">
+					<input type="radio" id="option-four" name="option" class="radio" value="optionD" />
+					<label for="option-four" class="option" id="option-four-label"></label>
+				</span>
+<!-- end of modal of quiz details-->
+
+			</div>
+
+			<div class="modal-button-container">
+				<button class="custom-btn btn-13" onclick="handleNextQuestion()">Next Question</button>
+			</div>
+			<div class="modal-container" id="option-modal">
+			  <div class="modal-content-container">
+				   <h1>Please Pick An Option</h1>
+				   <div class="modal-button-container">
+					  <button class="custom-btn btn-13" onclick="closeOptionModal()">Continue</button>
+				  </div>
+			  </div>
+		 </div>
+		</div>
+		 <!-- creating a modal for when quiz ends -->
+		 <div class="modal-container" id="score-modal">
+		  <div class="modal-content-container">
+			  <h1>Congratulations, Quiz Completed.</h1>
+			  <div class="grade-details">
+				  <p>Wrong Answers : <span id="wrong-answers"></span></p>
+				  <p>Right Answers : <span id="right-answers"></span></p>
+				  <p>Grade : <span id="grade-percentage"></span>%</p>
+				  <p ><span id="remarks"></span></p>
+			  </div>
+			  <div class="modal-button-container">
+				  <button class="custom-btn btn-13" onclick="closeScoreModal()">Continue</button>
+			  </div>
+		  </div>
+	  </div>
+	
+</div>
+<script>
+
+      </script>
+	</section>
+
+
+<div class="footer">
+
+    <div class="box-container">
+
+        <div class="box">
+           <img src="/html/qimage/go.png" alt="">
+        </div>
+		<div class="box">
+            <h3>about us</h3>
+            <p>This team consist of four members as shown below were we build a blog website of database and algorithms 
+                 for computer scince students .</p>
+        </div>
+
+
+        <div class="box">
+            <h3>follow us</h3>
+            <a href="#">facebook</a>
+            <a href="#">twitter</a>
+            <a href="#">instagram</a>
+            <a href="#">linkedin</a>
+            <a href="#">youtube</a>
+        </div>
+
+    
+</body>
+        
+</html>

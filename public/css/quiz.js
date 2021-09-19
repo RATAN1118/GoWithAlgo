@@ -85,6 +85,46 @@
         optionC: "Insertion sort",
         optionD: "bottom up merge sort",
         correctOption: "optionD"
+    },
+    {
+        question: "What is the worst case complexity of bubble sort?",
+        optionA: "O(nlogn)",
+        optionB: "O(logn)",
+        optionC: "O(n)",
+        optionD: "O(n2)",
+        correctOption: "optionD"
+    },
+    {
+        question: "Which of the following is not an advantage of optimised bubble sort over other sorting techniques in case of sorted elements?",
+        optionA: "It is faster",
+        optionB: "Consumes less memory",
+        optionC: "Detects whether the input is already sorted",
+        optionD: "Consumes less time",
+        correctOption: "optionC"
+    },
+    {
+        question: "What is the average case complexity of bubble sort?",
+        optionA: "O(nlogn)",
+        optionB: "O(logn)",
+        optionC: "O(n)",
+        optionD: "O(n2)",
+        correctOption: "optionD"
+
+    },
+    {
+        question: "Which of the following sorting algorithm does not use recursion",
+        optionA: "Merge sort",
+        optionB: "Quick sort",
+        optionC: "Insertion sort",
+        optionD: "bottom up merge sort",
+        correctOption: "optionD"
+    },{
+        question: "Which of the following sorting algorithm does not use recursion",
+        optionA: "Merge sort",
+        optionB: "Quick sort",
+        optionC: "Insertion sort",
+        optionD: "bottom up merge sort",
+        correctOption: "optionD"
     }
 
 
@@ -100,13 +140,16 @@ function handleQuestions() {
     //function to shuffle and push 10 questions to shuffledQuestions array
 //app would be dealing with 10questions per session
 var name = document.getElementById("check").innerHTML;
-  alert(name);
+  
   var m = 0;
   if(name==="Quick sort"){
     m= 0;
   }
   else if(name==="Merge sort"){
       m=5;
+  }
+  else if(name==="Bubble sort"){
+      m=10
   }
   var i = m;
 

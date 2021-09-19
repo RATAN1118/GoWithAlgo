@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="barc.css">
+	<link rel="stylesheet" href="style2.css">
+	<script src="quiz.js"></script>
+	<style>
+		nav::before {
+			background-color: #ff3300a8;}
+
+		</style>
+	
+    <title>LinkedList</title>
+</head>
+<div class="menu1">
+	<div class="title1">MENU</div>
+	<ul class="nav1">
+		<li><a href="/Home">Home</a></li>
+		<li><a href="BQuickSort.html">Algo</a></li>
+		<li><a href="ARRAY.html">Ds</a></li>
+		<li><a href="aboutus.html">About us</a></li>
+		<li><a href="/index">Logout</a></li>
+	</ul> 
+</div>
+<header class="" role="banner">   
+	<div class="site-title-centered">   
+				<div class="header-image">   
+				  
+				<div class="site-branding"> 
+						<img src="qimage/go.png" alt="" width="100">
+					
+								<h2 >IMPROVE YOUR SKILL WITH </h2> 
+								<h1>GO WITH ALOG</h1> 
+							
+								<p>So Let's Get Started</p>  
+													  
+														</div>  <!-- .site-branding -->                                                                
+	<nav class="social-links" aria-label="Social Menu"></nav>
+		<div class="social-menu">
+		<ul  >
+			<li class=" menu-item"><a href=""><span class="screen-reader-text">twitter</span></a></li>
+			 <li class=" menu-item"><a href=""><span class="screen-reader-text">linkedin</span></a></li>
+			<li class=" menu-item"><a href=""><span class="screen-reader-text">youtube</span></a></li>
+			  </ul>
+		   </div>
+
+			 </nav>
+			
+		 
+		</div>
+	</div><!-- .header-image-->
+			</header>
+
+
+<body onload="NextQuestion(0)">
+	
+	
+	
+    <input type="checkbox" id="navcheck" role="button" title="menu">
+<label for="navcheck" aria-hidden="true" title="menu">
+	<span class="burger">
+		<span class="bar">
+			<span class="visuallyhidden">Menu</span>
+		</span>
+	</span>
+</label>
+
+
+<nav id="menu">
+	<a href="ARRAY.html">ARRAY</a>
+	<a href="#">LinkedList</a>
+	<a href="#">Stack</a>
+	<a href="#">Queue</a>
+	<a href="#">Part1</a>
+	<a href="#">Part1</a>
+</nav>
+
+	
+	<section class="content">
+		
+		<h1 id="check">linked list</h1>
+		
+		<p class="para">A <strong>linked list</strong>  is a sequence of data structures, which are connected together via links.
+            Linked List is a sequence of links which contains items. Each link contains a connection to another link. Linked list is the second most-used data structure after array. Following are the important terms to understand the concept of Linked List. <br>
+            <li>Link − Each link of a linked list can store a data called an element.</li>	
+            <li>Next − Each link of a linked list contains a link to the next link called Next.</li>	
+            <li>LinkedList − A Linked List contains the connection link to the first link called First.</li> </p>
+           <h2>Linked List Representation</h2> 
+           <p>Linked list can be visualized as a chain of nodes, where every node points to the next node. <br> </p> 
+             <img src="/qimage/LL1.jpg" alt="">
+
+       <p>
+        As per the above illustration, following are the important points to be considered. <br>
+       <li>Linked List contains a link element called first.</li>	
+        <li>Each link carries a data field(s) and a link field called next.</li>	
+	    <li>Each link is linked with its next link using its next link.</li>
+	    <li>Last link carries a link as null to mark the end of the list.</li>
+        <strong>Types of Linked List</strong> <br>
+       <p> Following are the various types of linked list.</p> <br>
+ <li>Simple Linked List − Item navigation is forward only.</li>	
+ <li>Doubly Linked List − Items can be navigated forward and backward.</li>	
+ <li>Circular Linked List − Last item contains link of the first element as next and the <br> first element has a link to the last element as previous.</li> </p>	
+   <h2>Basic Operations</h2> 
+   <p>Following are the basic operations supported by a list. <br>
+    <strong>Insertion Operation</strong> <br>
+    Adding a new node in linked list is a more than one step activity. We shall learn this with diagrams here. First, create a node using the same structure and find the location where it has to be inserted. <br>
+     </p>
+     <img src="/qimage/LL2.jpg" alt="">
+   <p> Imagine that we are inserting a node B (NewNode), between A (LeftNode) and C (RightNode). Then point B.next to C −
+        NewNode.next −> RightNode;
+        It should look like this − <br> </p>
+        <img src="qimage/LL3.jpg" alt="">
+        <p>Now, the next node at the left should point to the new node. <br>
+            LeftNode.next −> NewNode;
+            </p>
+            <img src="qimage/LL4.jpg" alt="">
+        <p>This will put the new node in the middle of the two. The new list should look like this −</p>
+        <img src="qimage/LL5.jpg" alt="">
+        <p>Similar steps should be taken if the node is being inserted at the beginning of the list. While inserting it at the end, 
+            the second last node of the list should point to the new node and the new node will point to NULL.</p>
+
+            <strong>Deletion Operation</strong> <br>
+            
+           <p> Deletion is also a more than one step process. We shall learn with pictorial representation. First, 
+           locate the target node to be removed, by using searching algorithms.</p>
+           <img src="qimage/LL6.jpg" alt="">
+           <p>The left (previous) node of the target node now should point to the next node of the target node − <br>
+            LeftNode.next −> TargetNode.next;
+            </p>
+            <img src="qimage/LL7.jpg" alt="">
+            <p>This will remove the link that was pointing to the target node. Now, using the following code, we will remove what the target node is pointing at. <br>
+                TargetNode.next −> NULL;
+                </p>
+                <img src="qimage/LL8.jpg" alt="">
+                <p>We need to use the deleted node. We can keep that in memory otherwise we can simply deallocate memory and wipe off the target node completely.</p>
+                <img src="qimage/LL9.jpg" alt="">
+
+	
+
+	
+	
+	<pre class='code code-jquery'><label>C++</label><code>
+        
+        // A simple C++ program for traversal of a linked list
+        #include &lt;bits/stdc++.h&gt;
+        using namespace std;
+         
+        class Node {
+        public:
+            int data;
+            Node* next;
+        };
+         
+        // This function prints contents of linked list
+        // starting from the given node
+        void printList(Node* n)
+        {
+            while (n != NULL) {
+                cout << n->data << " ";
+                n = n->next;
+            }
+        }
+         
+        // Driver code
+        int main()
+        {
+            Node* head = NULL;
+            Node* second = NULL;
+            Node* third = NULL;
+         
+            // allocate 3 nodes in the heap
+            head = new Node();
+            second = new Node();
+            third = new Node();
+         
+            head->data = 1; // assign data in first node
+            head->next = second; // Link first node with second
+         
+            second->data = 2; // assign data to second node
+            second->next = third;
+         
+            third->data = 3; // assign data to third node
+            third->next = NULL;
+         
+            printList(head);
+         
+            return 0;
+        }
+         
+
+</code></pre>
+	
+		<button class="custom-btn btn" onclick="window.location='https://www.jdoodle.com/embed/v0/3unb';"><a>TRY YOUR SELF</a></button>
+		
+				<h1>Quiz of linked list</h1>
+				<p>Here are some question for you to solve to test your understanding about linked list </p> 
+					<li> In this Quize there will be 5 Questions</li>
+					<li> you will have to solve all of those quistions </li>
+					<li> then the marks will be shown to you </li>
+					<p> then you will have to deside what kind of efforts you have to do for gain extra knowladge of this algorithm.
+				</p>
+      <div class="quizbody"  >
+		<div class="game-quiz-container">
+			<div class="game-details-container">
+				<h1>Score : <span id="player-score"></span> / 5</h1>
+				<h1> Question : <span id="question-number"></span> / 5</h1>
+			</div>
+			<div class="game-question-container">
+				<h1 id="display-question"></h1>
+			</div>
+			<div class="game-options-container">
+
+			 
+				<span class="qspan">
+					<input type="radio" id="option-one" name="option" class="radio" value="optionA" />
+					<label for="option-one" class="option" id="option-one-label"></label>
+				</span>
+
+
+				<span class="qspan">
+					<input type="radio" id="option-two" name="option" class="radio" value="optionB" />
+					<label for="option-two" class="option" id="option-two-label"></label>
+				</span>
+
+
+				<span class="qspan">
+					<input type="radio" id="option-three" name="option" class="radio" value="optionC" />
+					<label for="option-three" class="option" id="option-three-label"></label>
+				</span>
+
+
+				<span class="qspan">
+					<input type="radio" id="option-four" name="option" class="radio" value="optionD" />
+					<label for="option-four" class="option" id="option-four-label"></label>
+				</span>
+<!-- end of modal of quiz details-->
+
+			</div>
+
+			<div class="modal-button-container">
+				<button class="custom-btn btn-13" onclick="handleNextQuestion()">Next Question</button>
+			</div>
+			<div class="modal-container" id="option-modal">
+			  <div class="modal-content-container">
+				   <h1>Please Pick An Option</h1>
+				   <div class="modal-button-container">
+					  <button class="custom-btn btn-13" onclick="closeOptionModal()">Continue</button>
+				  </div>
+			  </div>
+		 </div>
+		</div>
+		 <!-- creating a modal for when quiz ends -->
+		 <div class="modal-container" id="score-modal">
+		  <div class="modal-content-container">
+			  <h1>Congratulations, Quiz Completed.</h1>
+			  <div class="grade-details">
+				  <p>Wrong Answers : <span id="wrong-answers"></span></p>
+				  <p>Right Answers : <span id="right-answers"></span></p>
+				  <p>Grade : <span id="grade-percentage"></span>%</p>
+				  <p ><span id="remarks"></span></p>
+			  </div>
+			  <div class="modal-button-container">
+				  <button class="custom-btn btn-13" onclick="closeScoreModal()">Continue</button>
+			  </div>
+		  </div>
+	  </div>
+	
+</div>
+<script>
+
+      </script>
+	</section>
+
+
+<div class="footer">
+
+    <div class="box-container">
+
+        <div class="box">
+           <img src="/html/qimage/go.png" alt="">
+        </div>
+		<div class="box">
+            <h3>about us</h3>
+            <p>This team consist of four members as shown below were we build a blog website of database and algorithms 
+                 for computer scince students .</p>
+        </div>
+
+
+        <div class="box">
+            <h3>follow us</h3>
+            <a href="#">facebook</a>
+            <a href="#">twitter</a>
+            <a href="#">instagram</a>
+            <a href="#">linkedin</a>
+            <a href="#">youtube</a>
+        </div>
+
+    
+</body>
+        
+</html>

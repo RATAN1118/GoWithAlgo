@@ -306,6 +306,16 @@ h1 {
   font: 2.5em/1.4 "roboto condensed";
   font-weight: 200;
 }
+strong{
+  font: 2rem "roboto condensed";
+  font-weight: 100;
+  color: #03e7a3 ;
+}
+h2 {
+  font: 2em/1.4 "roboto condensed";
+  font-weight: 100;
+  color: #009688;
+}
 .content h1{
   color: #009688;
 }
@@ -320,7 +330,7 @@ li{
   color: #048654;
 }
 
-/*# sourceMappingURL=barc.css.map */
+
 
 .header-image {
   position: relative;
